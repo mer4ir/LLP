@@ -1,0 +1,382 @@
+
+medium_x\medium.cpp.obj:     file format pe-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_ZN6mediumL5checkEb> (File Offset: 0x17c):
+   0:	test   cl,cl
+   2:	je     10 <_ZN6mediumL5checkEb+0x10> (File Offset: 0x18c)
+   4:	lea    rcx,[rip+0x0]        # b <_ZN6mediumL5checkEb+0xb> (File Offset: 0x187)
+			7: IMAGE_REL_AMD64_REL32	.rdata
+   b:	jmp    10 <_ZN6mediumL5checkEb+0x10> (File Offset: 0x18c)
+			c: IMAGE_REL_AMD64_REL32	puts
+  10:	push   rbp
+  11:	lea    rcx,[rip+0xf]        # 27 <_ZN6mediumL5checkEb+0x27> (File Offset: 0x1a3)
+			14: IMAGE_REL_AMD64_REL32	.rdata
+  18:	mov    rbp,rsp
+  1b:	sub    rsp,0x20
+  1f:	call   24 <_ZN6mediumL5checkEb+0x24> (File Offset: 0x1a0)
+			20: IMAGE_REL_AMD64_REL32	puts
+  24:	or     ecx,0xffffffff
+  27:	call   2c <_ZN6mediumL5checkEb+0x2c> (File Offset: 0x1a8)
+			28: IMAGE_REL_AMD64_REL32	exit
+  2c:	nop    DWORD PTR [rax+0x0]
+
+0000000000000030 <access1> (File Offset: 0x1ac):
+  30:	push   rbp
+  31:	xor    eax,eax
+  33:	mov    rbp,rsp
+  36:	sub    rsp,0x20
+  3a:	cmp    DWORD PTR [rcx],0x58583336
+  40:	je     50 <access1+0x20> (File Offset: 0x1cc)
+  42:	mov    ecx,eax
+  44:	call   0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+  49:	leave
+  4a:	ret
+  4b:	nop    DWORD PTR [rax+rax*1+0x0]
+  50:	cmp    BYTE PTR [rcx+0x4],0x0
+  54:	jne    42 <access1+0x12> (File Offset: 0x1be)
+  56:	movss  xmm0,DWORD PTR [rcx+0x8]
+  5b:	comiss xmm0,DWORD PTR [rip+0x44]        # a6 <access2+0x16> (File Offset: 0x222)
+			5e: IMAGE_REL_AMD64_REL32	.rdata
+  62:	jbe    42 <access1+0x12> (File Offset: 0x1be)
+  64:	movsx  eax,dl
+  67:	pxor   xmm0,xmm0
+  6b:	cvtsi2ss xmm0,eax
+  6f:	comiss xmm0,xmm2
+  72:	seta   cl
+  75:	xor    eax,eax
+  77:	test   dl,dl
+  79:	setg   al
+  7c:	and    eax,ecx
+  7e:	mov    ecx,eax
+  80:	call   0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+  85:	leave
+  86:	ret
+  87:	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000090 <access2> (File Offset: 0x20c):
+  90:	movaps xmm1,xmm0
+  93:	pxor   xmm0,xmm0
+  97:	pxor   xmm3,xmm3
+  9b:	xor    ecx,ecx
+  9d:	cvtsi2ss xmm0,DWORD PTR [rdx]
+  a1:	mulss  xmm0,DWORD PTR [rdx+0xc]
+  a6:	cvtsi2ss xmm3,DWORD PTR [rdx+0x4]
+  ab:	addss  xmm1,xmm0
+  af:	movss  xmm0,DWORD PTR [rip+0x48]        # ff <access3+0x1f> (File Offset: 0x27b)
+			b3: IMAGE_REL_AMD64_REL32	.rdata
+  b7:	mulss  xmm0,DWORD PTR [rdx+0x8]
+  bc:	addss  xmm0,xmm3
+  c0:	subss  xmm0,DWORD PTR [rip+0x44]        # 10c <access3+0x2c> (File Offset: 0x288)
+			c4: IMAGE_REL_AMD64_REL32	.rdata
+  c8:	comiss xmm0,xmm1
+  cb:	jbe    da <access2+0x4a> (File Offset: 0x256)
+  cd:	xor    ecx,ecx
+  cf:	comisd xmm2,QWORD PTR [rip+0x50]        # 127 <access3+0x47> (File Offset: 0x2a3)
+			d3: IMAGE_REL_AMD64_REL32	.rdata
+  d7:	seta   cl
+  da:	jmp    0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+  df:	nop
+
+00000000000000e0 <access3> (File Offset: 0x25c):
+  e0:	push   rbp
+  e1:	mov    rbp,rsp
+  e4:	push   rsi
+  e5:	mov    esi,r8d
+  e8:	push   rbx
+  e9:	mov    ebx,ecx
+  eb:	sub    rsp,0x20
+  ef:	and    rsp,0xfffffffffffffff0
+  f3:	sub    rsp,0x20
+  f7:	movaps XMMWORD PTR [rsp+0x20],xmm6
+  fc:	pxor   xmm6,xmm6
+ 100:	cvtsi2ss xmm6,DWORD PTR [rdx]
+ 104:	movaps XMMWORD PTR [rsp+0x30],xmm7
+ 109:	movss  xmm7,DWORD PTR [rdx+0x4]
+ 10e:	movaps xmm0,xmm6
+ 111:	addss  xmm6,xmm7
+ 115:	subss  xmm0,xmm7
+ 119:	xorps  xmm0,XMMWORD PTR [rip+0x60]        # 180 <access4+0x20> (File Offset: 0x2fc)
+			11c: IMAGE_REL_AMD64_REL32	.rdata
+ 120:	call   125 <access3+0x45> (File Offset: 0x2a1)
+			121: IMAGE_REL_AMD64_REL32	sinf
+ 125:	addss  xmm6,DWORD PTR [rip+0x44]        # 171 <access4+0x11> (File Offset: 0x2ed)
+			129: IMAGE_REL_AMD64_REL32	.rdata
+ 12d:	xor    ecx,ecx
+ 12f:	comiss xmm0,xmm6
+ 132:	jbe    13e <access3+0x5e> (File Offset: 0x2ba)
+ 134:	xor    ebx,esi
+ 136:	xor    ecx,ecx
+ 138:	cmp    ebx,0x1
+ 13b:	sete   cl
+ 13e:	movaps xmm6,XMMWORD PTR [rsp+0x20]
+ 143:	movaps xmm7,XMMWORD PTR [rsp+0x30]
+ 148:	lea    rsp,[rbp-0x10]
+ 14c:	pop    rbx
+ 14d:	pop    rsi
+ 14e:	pop    rbp
+ 14f:	jmp    0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 154:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+ 15f:	nop
+
+0000000000000160 <access4> (File Offset: 0x2dc):
+ 160:	push   rbp
+ 161:	mov    rax,r8
+ 164:	sar    rax,0x20
+ 168:	mov    rbp,rsp
+ 16b:	push   rdi
+ 16c:	xor    edi,edi
+ 16e:	push   rsi
+ 16f:	push   rbx
+ 170:	sub    rsp,0x28
+ 174:	cmp    eax,0xffffffff
+ 177:	je     190 <access4+0x30> (File Offset: 0x30c)
+ 179:	add    rsp,0x28
+ 17d:	mov    ecx,edi
+ 17f:	pop    rbx
+ 180:	pop    rsi
+ 181:	pop    rdi
+ 182:	pop    rbp
+ 183:	jmp    0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 188:	nop    DWORD PTR [rax+rax*1+0x0]
+ 190:	movd   xmm0,r8d
+ 195:	mov    ebx,ecx
+ 197:	mov    esi,edx
+ 199:	call   19e <access4+0x3e> (File Offset: 0x31a)
+			19a: IMAGE_REL_AMD64_REL32	_ZSt5isinff
+ 19e:	test   al,al
+ 1a0:	je     179 <access4+0x19> (File Offset: 0x2f5)
+ 1a2:	movsx  ecx,bx
+ 1a5:	movzx  edx,sil
+ 1a9:	xor    edi,edi
+ 1ab:	add    ecx,edx
+ 1ad:	cmp    ecx,0x18a9
+ 1b3:	setg   dil
+ 1b7:	add    rsp,0x28
+ 1bb:	pop    rbx
+ 1bc:	mov    ecx,edi
+ 1be:	pop    rsi
+ 1bf:	pop    rdi
+ 1c0:	pop    rbp
+ 1c1:	jmp    0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 1c6:	cs nop WORD PTR [rax+rax*1+0x0]
+
+00000000000001d0 <access5> (File Offset: 0x34c):
+ 1d0:	push   rbp
+ 1d1:	mov    rbp,rsp
+ 1d4:	push   rsi
+ 1d5:	xor    esi,esi
+ 1d7:	push   rbx
+ 1d8:	mov    ebx,edx
+ 1da:	sub    rsp,0x10
+ 1de:	and    rsp,0xfffffffffffffff0
+ 1e2:	sub    rsp,0x20
+ 1e6:	mov    rax,QWORD PTR [r8]
+ 1e9:	mov    rdx,QWORD PTR [r8+0x8]
+ 1ed:	movaps XMMWORD PTR [rsp+0x20],xmm6
+ 1f2:	movsxd rcx,eax
+ 1f5:	sar    rax,0x20
+ 1f9:	cmp    rcx,rax
+ 1fc:	je     218 <access5+0x48> (File Offset: 0x394)
+ 1fe:	movaps xmm6,XMMWORD PTR [rsp+0x20]
+ 203:	lea    rsp,[rbp-0x10]
+ 207:	mov    ecx,esi
+ 209:	pop    rbx
+ 20a:	pop    rsi
+ 20b:	pop    rbp
+ 20c:	jmp    0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 211:	nop    DWORD PTR [rax+0x0]
+ 218:	movaps xmm6,xmm0
+ 21b:	movq   xmm0,rdx
+ 220:	call   225 <access5+0x55> (File Offset: 0x3a1)
+			221: IMAGE_REL_AMD64_REL32	_ZSt5isnand
+ 225:	test   al,al
+ 227:	je     1fe <access5+0x2e> (File Offset: 0x37a)
+ 229:	pxor   xmm1,xmm1
+ 22d:	xor    eax,eax
+ 22f:	cvtsi2ss xmm1,ebx
+ 233:	subss  xmm6,xmm1
+ 237:	ucomiss xmm6,DWORD PTR [rip+0x70]        # 2ae <access6+0x5e> (File Offset: 0x42a)
+			23a: IMAGE_REL_AMD64_REL32	.rdata
+ 23e:	setnp  al
+ 241:	cmove  esi,eax
+ 244:	jmp    1fe <access5+0x2e> (File Offset: 0x37a)
+ 246:	cs nop WORD PTR [rax+rax*1+0x0]
+
+0000000000000250 <access6> (File Offset: 0x3cc):
+ 250:	pxor   xmm0,xmm0
+ 254:	movss  xmm2,DWORD PTR [rcx+0x8]
+ 259:	cvttss2si eax,DWORD PTR [rcx+0xc]
+ 25e:	cvtsi2ss xmm0,QWORD PTR [rcx]
+ 263:	divss  xmm2,xmm0
+ 267:	pxor   xmm0,xmm0
+ 26b:	cvtsi2ss xmm0,eax
+ 26f:	ucomiss xmm2,xmm0
+ 272:	jp     2b0 <access6+0x60> (File Offset: 0x42c)
+ 274:	jne    2b0 <access6+0x60> (File Offset: 0x42c)
+ 276:	push   rbp
+ 277:	movapd xmm0,xmm1
+ 27b:	mov    rbp,rsp
+ 27e:	push   rsi
+ 27f:	mov    esi,r8d
+ 282:	push   rbx
+ 283:	sub    rsp,0x20
+ 287:	call   28c <access6+0x3c> (File Offset: 0x408)
+			288: IMAGE_REL_AMD64_REL32	_ZSt7signbitd
+ 28c:	pxor   xmm0,xmm0
+ 290:	cvtsi2ss xmm0,esi
+ 294:	mov    ebx,eax
+ 296:	call   29b <access6+0x4b> (File Offset: 0x417)
+			297: IMAGE_REL_AMD64_REL32	_ZSt7signbitf
+ 29b:	add    rsp,0x20
+ 29f:	xor    ebx,eax
+ 2a1:	movzx  ecx,bl
+ 2a4:	pop    rbx
+ 2a5:	pop    rsi
+ 2a6:	pop    rbp
+ 2a7:	jmp    0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 2ac:	nop    DWORD PTR [rax+0x0]
+ 2b0:	xor    ecx,ecx
+ 2b2:	jmp    0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 2b7:	nop    WORD PTR [rax+rax*1+0x0]
+
+00000000000002c0 <access7> (File Offset: 0x43c):
+ 2c0:	movsx  eax,WORD PTR [r8]
+ 2c4:	movsx  r9d,WORD PTR [r8+0x2]
+ 2c9:	pxor   xmm0,xmm0
+ 2cd:	shl    eax,0x10
+ 2d0:	or     eax,r9d
+ 2d3:	cvtsi2ss xmm0,eax
+ 2d7:	ucomiss xmm0,DWORD PTR [r8+0x4]
+ 2dc:	jp     2f0 <access7+0x30> (File Offset: 0x46c)
+ 2de:	jne    2f0 <access7+0x30> (File Offset: 0x46c)
+ 2e0:	movsx  edx,dl
+ 2e3:	or     edx,ecx
+ 2e5:	setne  cl
+ 2e8:	movzx  ecx,cl
+ 2eb:	jmp    0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 2f0:	xor    ecx,ecx
+ 2f2:	jmp    0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 2f7:	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000300 <access8> (File Offset: 0x47c):
+ 300:	push   rbp
+ 301:	movzx  eax,cl
+ 304:	mov    rbp,rsp
+ 307:	sub    rsp,0x20
+ 30b:	mov    QWORD PTR [rbp+0x10],rcx
+ 30f:	sub    eax,0x29
+ 312:	jne    318 <access8+0x18> (File Offset: 0x494)
+ 314:	movzx  eax,BYTE PTR [rbp+0x11]
+ 318:	xor    ecx,ecx
+ 31a:	test   eax,eax
+ 31c:	jle    346 <access8+0x46> (File Offset: 0x4c2)
+ 31e:	movsd  xmm1,QWORD PTR [rip+0x78]        # 39e <access9+0x4e> (File Offset: 0x51a)
+			322: IMAGE_REL_AMD64_REL32	.rdata
+ 326:	pxor   xmm0,xmm0
+ 32a:	cvtss2sd xmm0,DWORD PTR [rbp+0x14]
+ 32f:	comisd xmm1,xmm0
+ 333:	jbe    346 <access8+0x46> (File Offset: 0x4c2)
+ 335:	cmp    dl,0x61
+ 338:	sete   al
+ 33b:	xor    ecx,ecx
+ 33d:	cmp    r8b,0x42
+ 341:	sete   cl
+ 344:	and    ecx,eax
+ 346:	call   0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 34b:	leave
+ 34c:	ret
+ 34d:	nop    DWORD PTR [rax]
+
+0000000000000350 <access9> (File Offset: 0x4cc):
+ 350:	push   rbp
+ 351:	mov    rbp,rsp
+ 354:	push   rsi
+ 355:	mov    rsi,rdx
+ 358:	lea    rdx,[rip+0x22]        # 381 <access9+0x31> (File Offset: 0x4fd)
+			35b: IMAGE_REL_AMD64_REL32	.rdata
+ 35f:	push   rbx
+ 360:	mov    ebx,ecx
+ 362:	and    rsp,0xfffffffffffffff0
+ 366:	sub    rsp,0x30
+ 36a:	movdqu xmm2,XMMWORD PTR [r8]
+ 36f:	lea    rcx,[rsp+0x20]
+ 374:	movaps XMMWORD PTR [rsp+0x20],xmm2
+ 379:	call   37e <access9+0x2e> (File Offset: 0x4fa)
+			37a: IMAGE_REL_AMD64_REL32	strcmp
+ 37e:	xor    ecx,ecx
+ 380:	test   eax,eax
+ 382:	jns    3a9 <access9+0x59> (File Offset: 0x525)
+ 384:	mov    rax,rsi
+ 387:	pxor   xmm1,xmm1
+ 38b:	pxor   xmm0,xmm0
+ 38f:	xor    ecx,ecx
+ 391:	neg    rax
+ 394:	cvtsi2ss xmm0,ebx
+ 398:	addss  xmm0,DWORD PTR [rsp+0x28]
+ 39e:	cvtsi2ss xmm1,rax
+ 3a3:	comiss xmm1,xmm0
+ 3a6:	seta   cl
+ 3a9:	call   0 <_ZN6mediumL5checkEb> (File Offset: 0x17c)
+ 3ae:	lea    rsp,[rbp-0x10]
+ 3b2:	pop    rbx
+ 3b3:	pop    rsi
+ 3b4:	pop    rbp
+ 3b5:	ret
+ 3b6:	nop
+ 3b7:	nop
+ 3b8:	nop
+ 3b9:	nop
+ 3ba:	nop
+ 3bb:	nop
+ 3bc:	nop
+ 3bd:	nop
+ 3be:	nop
+ 3bf:	nop
+
+Disassembly of section .rdata:
+
+0000000000000000 <.rdata> (File Offset: 0x53c):
+   0:	movsxd esp,DWORD PTR [r11+0x65]
+   4:	jae    79 <.rdata+0x79> (File Offset: 0x5b5)
+   6:	and    BYTE PTR [rdi+0x72],ah
+   9:	(bad)
+   a:	outs   dx,BYTE PTR [rsi]
+   b:	je     72 <.rdata+0x72> (File Offset: 0x5ae)
+   d:	add    BYTE PTR fs:[rcx+0x63],al
+  11:	movsxd esp,DWORD PTR [rbp+0x73]
+  14:	jae    36 <.rdata+0x36> (File Offset: 0x572)
+  16:	fs outs dx,BYTE PTR gs:[rsi]
+  19:	imul   esp,DWORD PTR [rbp+0x64],0x58333600
+  20:	pop    rax
+  21:	add    BYTE PTR [rbx+0x53],dl
+  24:	push   r13
+	... (skipping 8 zeroes, resuming at file offset: 0x56a)
+  2e:	add    BYTE PTR [rax],al
+  30:	(bad)
+  31:	(bad)
+  32:	(bad)
+  33:	jg     35 <.rdata+0x35> (File Offset: 0x571)
+	... (skipping 8 zeroes, resuming at file offset: 0x579)
+  3d:	add    BYTE PTR [rax],al
+  3f:	add    bh,bh
+  41:	(bad)
+  42:	jg     c3 <access2+0x33> (File Offset: 0x5ff)
+  44:	add    BYTE PTR [rax],al
+  46:	cmp    BYTE PTR [rdi],0x0
+  49:	add    BYTE PTR [rax+0x40],al
+	... (skipping 8 zeroes, resuming at file offset: 0x590)
+  54:	add    BYTE PTR [rax],al
+  56:	lock (bad)
+	... (skipping 8 zeroes, resuming at file offset: 0x59c)
+  60:	add    BYTE PTR [rax],al
+  62:	add    BYTE PTR [rax+0x0],al
+	... (skipping 8 zeroes, resuming at file offset: 0x5ac)
+  70:	add    BYTE PTR [rax-0x3b],al
+  73:	add    BYTE PTR [r8],r8b
+  76:	add    BYTE PTR [rax],al
+  78:	mov    esp,0x4189374
+  7d:	udb
+  7e:	sbb    al,al

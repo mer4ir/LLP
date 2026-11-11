@@ -1,0 +1,448 @@
+
+hard_x\hard.cpp.obj:     file format pe-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_ZL5checkb> (File Offset: 0x12c):
+   0:	test   cl,cl
+   2:	je     10 <_ZL5checkb+0x10> (File Offset: 0x13c)
+   4:	lea    rcx,[rip+0x0]        # b <_ZL5checkb+0xb> (File Offset: 0x137)
+			7: IMAGE_REL_AMD64_REL32	.rdata
+   b:	jmp    10 <_ZL5checkb+0x10> (File Offset: 0x13c)
+			c: IMAGE_REL_AMD64_REL32	puts
+  10:	push   rbp
+  11:	lea    rcx,[rip+0xf]        # 27 <_ZL5checkb+0x27> (File Offset: 0x153)
+			14: IMAGE_REL_AMD64_REL32	.rdata
+  18:	mov    rbp,rsp
+  1b:	sub    rsp,0x20
+  1f:	call   24 <_ZL5checkb+0x24> (File Offset: 0x150)
+			20: IMAGE_REL_AMD64_REL32	puts
+  24:	or     ecx,0xffffffff
+  27:	call   2c <_ZL5checkb+0x2c> (File Offset: 0x158)
+			28: IMAGE_REL_AMD64_REL32	exit
+  2c:	nop    DWORD PTR [rax+0x0]
+
+0000000000000030 <_ZNK4hard4var11C5checkENS0_1SE> (File Offset: 0x15c):
+  30:	test   rdx,rdx
+  33:	je     b0 <_ZNK4hard4var11C5checkENS0_1SE+0x80> (File Offset: 0x1dc)
+  35:	push   rbp
+  36:	mov    rbp,rsp
+  39:	sub    rsp,0x10
+  3d:	movzx  eax,BYTE PTR [rdx]
+  40:	mov    DWORD PTR [rbp-0x4],0x0
+  47:	test   al,al
+  49:	je     b8 <_ZNK4hard4var11C5checkENS0_1SE+0x88> (File Offset: 0x1e4)
+  4b:	movzx  r8d,BYTE PTR [rdx+0x1]
+  50:	not    eax
+  52:	mov    BYTE PTR [rbp-0x4],al
+  55:	mov    eax,0x1
+  5a:	test   r8b,r8b
+  5d:	je     a2 <_ZNK4hard4var11C5checkENS0_1SE+0x72> (File Offset: 0x1ce)
+  5f:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+  6a:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+  75:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+  80:	mov    r9d,eax
+  83:	and    r9d,0x3
+  87:	xor    BYTE PTR [rbp+r9*1-0x4],r8b
+  8c:	lea    r8d,[rax+0x1]
+  90:	mov    rax,r8
+  93:	movzx  r8d,BYTE PTR [rdx+r8*1]
+  98:	not    BYTE PTR [rbp+r9*1-0x4]
+  9d:	test   r8b,r8b
+  a0:	jne    80 <_ZNK4hard4var11C5checkENS0_1SE+0x50> (File Offset: 0x1ac)
+  a2:	mov    eax,DWORD PTR [rbp-0x4]
+  a5:	cmp    DWORD PTR [rcx],eax
+  a7:	leave
+  a8:	sete   al
+  ab:	ret
+  ac:	nop    DWORD PTR [rax+0x0]
+  b0:	xor    eax,eax
+  b2:	ret
+  b3:	nop    DWORD PTR [rax+rax*1+0x0]
+  b8:	xor    eax,eax
+  ba:	jmp    a5 <_ZNK4hard4var11C5checkENS0_1SE+0x75> (File Offset: 0x1d1)
+  bc:	nop    DWORD PTR [rax+0x0]
+
+00000000000000c0 <access1> (File Offset: 0x1ec):
+  c0:	push   rbp
+  c1:	mov    rbp,rsp
+  c4:	sub    rsp,0x20
+  c8:	mov    DWORD PTR [rbp+0x10],ecx
+  cb:	test   ecx,ecx
+  cd:	je     e8 <access1+0x28> (File Offset: 0x214)
+  cf:	lea    rcx,[rbp+0x10]
+  d3:	call   30 <_ZNK4hard4var11C5checkENS0_1SE> (File Offset: 0x15c)
+  d8:	movzx  ecx,al
+  db:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+  e0:	leave
+  e1:	ret
+  e2:	nop    WORD PTR [rax+rax*1+0x0]
+  e8:	xor    ecx,ecx
+  ea:	mov    QWORD PTR [rbp+0x18],rdx
+  ee:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+  f3:	mov    rdx,QWORD PTR [rbp+0x18]
+  f7:	jmp    cf <access1+0xf> (File Offset: 0x1fb)
+  f9:	nop
+  fa:	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000100 <_ZNK4hard4var21C5checkENS0_1SE> (File Offset: 0x22c):
+ 100:	mov    r9,QWORD PTR [rcx]
+ 103:	test   r9,r9
+ 106:	je     1b0 <_ZNK4hard4var21C5checkENS0_1SE+0xb0> (File Offset: 0x2dc)
+ 10c:	push   rbp
+ 10d:	pxor   xmm4,xmm4
+ 111:	pxor   xmm5,xmm5
+ 115:	shl    r9,0x4
+ 119:	mov    rbp,rsp
+ 11c:	sub    rsp,0x10
+ 120:	mov    rax,QWORD PTR [rdx+0x8]
+ 124:	movsd  xmm3,QWORD PTR [rip+0x38]        # 164 <_ZNK4hard4var21C5checkENS0_1SE+0x64> (File Offset: 0x290)
+			128: IMAGE_REL_AMD64_REL32	.rdata
+ 12c:	movaps XMMWORD PTR [rbp-0x10],xmm6
+ 130:	pxor   xmm6,xmm6
+ 134:	cvtsi2sd xmm4,QWORD PTR [rdx+0x10]
+ 13a:	cvtsi2sd xmm6,QWORD PTR [rdx]
+ 13f:	mov    rdx,QWORD PTR [rcx+0x8]
+ 143:	add    rax,rax
+ 146:	xor    ecx,ecx
+ 148:	cvtsi2sd xmm5,rax
+ 14d:	xor    eax,eax
+ 14f:	add    r9,rdx
+ 152:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+ 15d:	nop    DWORD PTR [rax]
+ 160:	movsd  xmm1,QWORD PTR [rdx]
+ 164:	movapd xmm0,xmm6
+ 168:	movsd  xmm2,QWORD PTR [rdx+0x8]
+ 16d:	mulsd  xmm0,xmm1
+ 171:	mulsd  xmm0,xmm1
+ 175:	mulsd  xmm1,xmm5
+ 179:	addsd  xmm0,xmm1
+ 17d:	addsd  xmm0,xmm4
+ 181:	movapd xmm1,xmm0
+ 185:	addsd  xmm1,xmm3
+ 189:	comisd xmm2,xmm1
+ 18d:	seta   r8b
+ 191:	or     ecx,r8d
+ 194:	comisd xmm0,xmm2
+ 198:	setae  r8b
+ 19c:	add    rdx,0x10
+ 1a0:	or     eax,r8d
+ 1a3:	cmp    r9,rdx
+ 1a6:	jne    160 <_ZNK4hard4var21C5checkENS0_1SE+0x60> (File Offset: 0x28c)
+ 1a8:	movaps xmm6,XMMWORD PTR [rbp-0x10]
+ 1ac:	and    eax,ecx
+ 1ae:	leave
+ 1af:	ret
+ 1b0:	xor    eax,eax
+ 1b2:	ret
+ 1b3:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+ 1be:	xchg   ax,ax
+
+00000000000001c0 <access2> (File Offset: 0x2ec):
+ 1c0:	push   rbp
+ 1c1:	mov    rbp,rsp
+ 1c4:	push   rbx
+ 1c5:	mov    rbx,rdx
+ 1c8:	and    rsp,0xfffffffffffffff0
+ 1cc:	sub    rsp,0x50
+ 1d0:	mov    rax,QWORD PTR [rcx]
+ 1d3:	mov    r8,QWORD PTR [rcx+0x8]
+ 1d7:	mov    QWORD PTR [rsp+0x40],rax
+ 1dc:	mov    QWORD PTR [rsp+0x48],r8
+ 1e1:	cmp    rax,0x1
+ 1e5:	jbe    230 <access2+0x70> (File Offset: 0x35c)
+ 1e7:	cmp    QWORD PTR [rbx],0x0
+ 1eb:	je     220 <access2+0x60> (File Offset: 0x34c)
+ 1ed:	movdqu xmm0,XMMWORD PTR [rbx]
+ 1f1:	lea    rdx,[rsp+0x20]
+ 1f6:	lea    rcx,[rsp+0x40]
+ 1fb:	movaps XMMWORD PTR [rsp+0x20],xmm0
+ 200:	mov    rax,QWORD PTR [rbx+0x10]
+ 204:	mov    QWORD PTR [rsp+0x30],rax
+ 209:	call   100 <_ZNK4hard4var21C5checkENS0_1SE> (File Offset: 0x22c)
+ 20e:	movzx  ecx,al
+ 211:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+ 216:	mov    rbx,QWORD PTR [rbp-0x8]
+ 21a:	leave
+ 21b:	ret
+ 21c:	nop    DWORD PTR [rax+0x0]
+ 220:	xor    ecx,ecx
+ 222:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+ 227:	jmp    1ed <access2+0x2d> (File Offset: 0x319)
+ 229:	nop    DWORD PTR [rax+0x0]
+ 230:	xor    ecx,ecx
+ 232:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+ 237:	jmp    1e7 <access2+0x27> (File Offset: 0x313)
+ 239:	nop
+ 23a:	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000240 <_ZNK4hard4var31C5checkERKNS0_1SE> (File Offset: 0x36c):
+ 240:	mov    r9,rdx
+ 243:	lea    r10,[rdx+0x10]
+ 247:	mov    edx,0x128e3fb7
+ 24c:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+ 257:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+ 262:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+ 26d:	data16 cs nop WORD PTR [rax+rax*1+0x0]
+ 278:	nop    DWORD PTR [rax+rax*1+0x0]
+ 280:	movzx  r8d,BYTE PTR [r9]
+ 284:	test   r8b,r8b
+ 287:	je     2a3 <_ZNK4hard4var31C5checkERKNS0_1SE+0x63> (File Offset: 0x3cf)
+ 289:	movsx  eax,r8b
+ 28d:	add    r9,0x1
+ 291:	xor    eax,edx
+ 293:	imul   eax,DWORD PTR [rcx]
+ 296:	xor    edx,edx
+ 298:	sub    eax,DWORD PTR [rcx+0x4]
+ 29b:	div    DWORD PTR [rcx+0x8]
+ 29e:	cmp    r9,r10
+ 2a1:	jne    280 <_ZNK4hard4var31C5checkERKNS0_1SE+0x40> (File Offset: 0x3ac)
+ 2a3:	cmp    DWORD PTR [rcx+0xc],edx
+ 2a6:	sete   al
+ 2a9:	ret
+ 2aa:	nop    WORD PTR [rax+rax*1+0x0]
+
+00000000000002b0 <access3> (File Offset: 0x3dc):
+ 2b0:	push   rbp
+ 2b1:	mov    rbp,rsp
+ 2b4:	push   rsi
+ 2b5:	mov    rsi,rcx
+ 2b8:	push   rbx
+ 2b9:	mov    rbx,rdx
+ 2bc:	sub    rsp,0x20
+ 2c0:	mov    eax,DWORD PTR [rdx]
+ 2c2:	test   eax,eax
+ 2c4:	je     2cc <access3+0x1c> (File Offset: 0x3f8)
+ 2c6:	cmp    DWORD PTR [rdx+0x8],0x9
+ 2ca:	ja     2d3 <access3+0x23> (File Offset: 0x3ff)
+ 2cc:	xor    ecx,ecx
+ 2ce:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+ 2d3:	mov    rcx,rbx
+ 2d6:	mov    rdx,rsi
+ 2d9:	call   240 <_ZNK4hard4var31C5checkERKNS0_1SE> (File Offset: 0x36c)
+ 2de:	add    rsp,0x20
+ 2e2:	pop    rbx
+ 2e3:	movzx  ecx,al
+ 2e6:	pop    rsi
+ 2e7:	pop    rbp
+ 2e8:	jmp    0 <_ZL5checkb> (File Offset: 0x12c)
+ 2ed:	nop
+ 2ee:	xchg   ax,ax
+
+00000000000002f0 <_ZNK4hard4var51C5checkERKNS0_1SE> (File Offset: 0x41c):
+ 2f0:	push   rbp
+ 2f1:	mov    rbp,rsp
+ 2f4:	push   r13
+ 2f6:	mov    r13,rcx
+ 2f9:	push   r12
+ 2fb:	push   rdi
+ 2fc:	push   rsi
+ 2fd:	push   rbx
+ 2fe:	sub    rsp,0x38
+ 302:	mov    rax,QWORD PTR [rdx]
+ 305:	movaps XMMWORD PTR [rbp-0x40],xmm6
+ 309:	test   rax,rax
+ 30c:	je     370 <_ZNK4hard4var51C5checkERKNS0_1SE+0x80> (File Offset: 0x49c)
+ 30e:	mov    rbx,QWORD PTR [rdx+0x8]
+ 312:	xor    edi,edi
+ 314:	xor    esi,esi
+ 316:	lea    r12,[rbx+rax*4]
+ 31a:	nop    WORD PTR [rax+rax*1+0x0]
+ 320:	movss  xmm6,DWORD PTR [rbx]
+ 324:	add    rbx,0x4
+ 328:	movaps xmm0,xmm6
+ 32b:	call   330 <_ZNK4hard4var51C5checkERKNS0_1SE+0x40> (File Offset: 0x45c)
+			32c: IMAGE_REL_AMD64_REL32	_ZSt5isnanf
+ 330:	movaps xmm0,xmm6
+ 333:	movzx  eax,al
+ 336:	add    esi,eax
+ 338:	call   33d <_ZNK4hard4var51C5checkERKNS0_1SE+0x4d> (File Offset: 0x469)
+			339: IMAGE_REL_AMD64_REL32	_ZSt5isinff
+ 33d:	movzx  eax,al
+ 340:	add    edi,eax
+ 342:	cmp    r12,rbx
+ 345:	jne    320 <_ZNK4hard4var51C5checkERKNS0_1SE+0x30> (File Offset: 0x44c)
+ 347:	xor    eax,eax
+ 349:	cmp    DWORD PTR [r13+0x0],esi
+ 34d:	jne    356 <_ZNK4hard4var51C5checkERKNS0_1SE+0x66> (File Offset: 0x482)
+ 34f:	cmp    DWORD PTR [r13+0x4],edi
+ 353:	sete   al
+ 356:	movaps xmm6,XMMWORD PTR [rbp-0x40]
+ 35a:	add    rsp,0x38
+ 35e:	pop    rbx
+ 35f:	pop    rsi
+ 360:	pop    rdi
+ 361:	pop    r12
+ 363:	pop    r13
+ 365:	pop    rbp
+ 366:	ret
+ 367:	nop    WORD PTR [rax+rax*1+0x0]
+ 370:	xor    edi,edi
+ 372:	xor    esi,esi
+ 374:	jmp    347 <_ZNK4hard4var51C5checkERKNS0_1SE+0x57> (File Offset: 0x473)
+ 376:	cs nop WORD PTR [rax+rax*1+0x0]
+
+0000000000000380 <access5> (File Offset: 0x4ac):
+ 380:	push   rbp
+ 381:	mov    rbp,rsp
+ 384:	push   rbx
+ 385:	mov    rbx,rcx
+ 388:	and    rsp,0xfffffffffffffff0
+ 38c:	sub    rsp,0x30
+ 390:	mov    eax,DWORD PTR [rcx]
+ 392:	imul   eax,DWORD PTR [rcx+0x4]
+ 396:	movdqu xmm0,XMMWORD PTR [rdx]
+ 39a:	movaps XMMWORD PTR [rsp+0x20],xmm0
+ 39f:	test   eax,eax
+ 3a1:	je     3c0 <access5+0x40> (File Offset: 0x4ec)
+ 3a3:	lea    rdx,[rsp+0x20]
+ 3a8:	mov    rcx,rbx
+ 3ab:	call   2f0 <_ZNK4hard4var51C5checkERKNS0_1SE> (File Offset: 0x41c)
+ 3b0:	movzx  ecx,al
+ 3b3:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+ 3b8:	mov    rbx,QWORD PTR [rbp-0x8]
+ 3bc:	leave
+ 3bd:	ret
+ 3be:	xchg   ax,ax
+ 3c0:	xor    ecx,ecx
+ 3c2:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+ 3c7:	jmp    3a3 <access5+0x23> (File Offset: 0x4cf)
+ 3c9:	nop
+ 3ca:	nop    WORD PTR [rax+rax*1+0x0]
+
+00000000000003d0 <_ZNK4hard4var61C5checkENS0_1SE> (File Offset: 0x4fc):
+ 3d0:	push   rbp
+ 3d1:	mov    rax,rdx
+ 3d4:	xor    r8d,r8d
+ 3d7:	mov    rbp,rsp
+ 3da:	push   rbx
+ 3db:	mov    rbx,rcx
+ 3de:	mov    ecx,0x3f
+ 3e3:	and    rsp,0xfffffffffffffff0
+ 3e7:	sub    rsp,0x30
+ 3eb:	mov    rdx,QWORD PTR [rdx]
+ 3ee:	mov    r10,QWORD PTR [rax+0x8]
+ 3f2:	mov    r9d,edx
+ 3f5:	shr    rdx,1
+ 3f8:	nop    DWORD PTR [rax+rax*1+0x0]
+ 400:	mov    eax,r9d
+ 403:	xor    eax,edx
+ 405:	shr    rdx,1
+ 408:	and    eax,0x1
+ 40b:	add    r8d,eax
+ 40e:	sub    ecx,0x1
+ 411:	jne    400 <_ZNK4hard4var61C5checkENS0_1SE+0x30> (File Offset: 0x52c)
+ 413:	movzx  edx,BYTE PTR [rbx]
+ 416:	xor    eax,eax
+ 418:	cmp    edx,r8d
+ 41b:	jg     439 <_ZNK4hard4var61C5checkENS0_1SE+0x69> (File Offset: 0x565)
+ 41d:	lea    rdx,[rsp+0x2c]
+ 422:	movq   xmm0,r10
+ 427:	call   42c <_ZNK4hard4var61C5checkENS0_1SE+0x5c> (File Offset: 0x558)
+			428: IMAGE_REL_AMD64_REL32	frexp
+ 42c:	movzx  eax,WORD PTR [rbx+0x2]
+ 430:	neg    eax
+ 432:	cmp    eax,DWORD PTR [rsp+0x2c]
+ 436:	setg   al
+ 439:	mov    rbx,QWORD PTR [rbp-0x8]
+ 43d:	leave
+ 43e:	ret
+ 43f:	nop
+
+0000000000000440 <access6> (File Offset: 0x56c):
+ 440:	push   rbp
+ 441:	mov    rbp,rsp
+ 444:	push   rbx
+ 445:	mov    rbx,rdx
+ 448:	and    rsp,0xfffffffffffffff0
+ 44c:	sub    rsp,0x30
+ 450:	mov    DWORD PTR [rbp+0x10],ecx
+ 453:	test   cl,cl
+ 455:	je     45e <access6+0x1e> (File Offset: 0x58a)
+ 457:	cmp    WORD PTR [rbp+0x12],0x0
+ 45c:	jne    465 <access6+0x25> (File Offset: 0x591)
+ 45e:	xor    ecx,ecx
+ 460:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+ 465:	movdqu xmm0,XMMWORD PTR [rbx]
+ 469:	lea    rdx,[rsp+0x20]
+ 46e:	lea    rcx,[rbp+0x10]
+ 472:	movaps XMMWORD PTR [rsp+0x20],xmm0
+ 477:	call   3d0 <_ZNK4hard4var61C5checkENS0_1SE> (File Offset: 0x4fc)
+ 47c:	movzx  ecx,al
+ 47f:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+ 484:	mov    rbx,QWORD PTR [rbp-0x8]
+ 488:	leave
+ 489:	ret
+ 48a:	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000490 <_ZNK4hard4var41C5checkERKNS0_1SE> (File Offset: 0x5bc):
+ 490:	mov    r8,rdx
+ 493:	mov    r9d,DWORD PTR [rcx+0x4]
+ 497:	mov    edx,DWORD PTR [rcx]
+ 499:	lea    r10,[r8+0x10]
+ 49d:	nop    DWORD PTR [rax]
+ 4a0:	movsx  eax,BYTE PTR [r8]
+ 4a4:	add    r8,0x1
+ 4a8:	imul   eax,edx
+ 4ab:	xor    edx,edx
+ 4ad:	div    r9d
+ 4b0:	cmp    r10,r8
+ 4b3:	jne    4a0 <_ZNK4hard4var41C5checkERKNS0_1SE+0x10> (File Offset: 0x5cc)
+ 4b5:	ror    edx,0xe
+ 4b8:	cmp    DWORD PTR [rcx+0x8],edx
+ 4bb:	sete   al
+ 4be:	ret
+ 4bf:	nop
+
+00000000000004c0 <access4> (File Offset: 0x5ec):
+ 4c0:	push   rbp
+ 4c1:	mov    rbp,rsp
+ 4c4:	push   rsi
+ 4c5:	mov    rsi,rcx
+ 4c8:	push   rbx
+ 4c9:	mov    rbx,rdx
+ 4cc:	sub    rsp,0x20
+ 4d0:	cmp    DWORD PTR [rdx],0x4dd
+ 4d6:	jbe    4de <access4+0x1e> (File Offset: 0x60a)
+ 4d8:	cmp    DWORD PTR [rdx+0x4],0x10
+ 4dc:	ja     4e5 <access4+0x25> (File Offset: 0x611)
+ 4de:	xor    ecx,ecx
+ 4e0:	call   0 <_ZL5checkb> (File Offset: 0x12c)
+ 4e5:	mov    rcx,rbx
+ 4e8:	mov    rdx,rsi
+ 4eb:	call   490 <_ZNK4hard4var41C5checkERKNS0_1SE> (File Offset: 0x5bc)
+ 4f0:	add    rsp,0x20
+ 4f4:	pop    rbx
+ 4f5:	movzx  ecx,al
+ 4f8:	pop    rsi
+ 4f9:	pop    rbp
+ 4fa:	jmp    0 <_ZL5checkb> (File Offset: 0x12c)
+ 4ff:	nop
+
+Disassembly of section .rdata:
+
+0000000000000000 <.rdata> (File Offset: 0x62c):
+   0:	movsxd esp,DWORD PTR [r11+0x65]
+   4:	jae    79 <_ZNK4hard4var11C5checkENS0_1SE+0x49> (File Offset: 0x6a5)
+   6:	and    BYTE PTR [rdi+0x72],ah
+   9:	(bad)
+   a:	outs   dx,BYTE PTR [rsi]
+   b:	je     72 <_ZNK4hard4var11C5checkENS0_1SE+0x42> (File Offset: 0x69e)
+   d:	add    BYTE PTR fs:[rcx+0x63],al
+  11:	movsxd esp,DWORD PTR [rbp+0x73]
+  14:	jae    36 <.rdata+0x36> (File Offset: 0x662)
+  16:	fs outs dx,BYTE PTR gs:[rsi]
+  19:	imul   esp,DWORD PTR [rbp+0x64],0x0
+  20:	(bad)
+  21:	(bad)
+  22:	(bad)
+  23:	jg     25 <.rdata+0x25> (File Offset: 0x651)
+	... (skipping 8 zeroes, resuming at file offset: 0x659)
+  2d:	add    BYTE PTR [rax],al
+  2f:	add    bh,bh
+  31:	(bad)
+  32:	jg     b3 <_ZNK4hard4var11C5checkENS0_1SE+0x83> (File Offset: 0x6df)
+	... (skipping 8 zeroes, resuming at file offset: 0x668)
+  3c:	add    BYTE PTR [rax],al
+  3e:	lock (bad)
